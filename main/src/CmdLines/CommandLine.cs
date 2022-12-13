@@ -8,7 +8,7 @@ namespace BookmarkCreator.CmdLines
     {
         public static CommandLine Create( string[] args )
         {
-            string definitionFile = "", outputFile = "";
+            string definitionFile = "", outputFile = @".\bookmark.html", title = "bookmark";
             StringComparison sc = StringComparison.CurrentCultureIgnoreCase;
             foreach( var arg in args )
             {
@@ -33,12 +33,16 @@ namespace BookmarkCreator.CmdLines
                 {
                     outputFile = CommandLine.SubStringEx( arg );
                 }
+                else if( arg.Contains( "--title=", sc ) || arg.Contains( "-t=", sc ) )
+                {
+                    title = CommandLine.SubStringEx( arg );
+                }
             }
 
-            if( (definitionFile.Equals( string.Empty ) || outputFile.Equals( string.Empty )) )
+            if( definitionFile.Equals( string.Empty ) )
                 throw new Exceptions.CmdLineArgException( "\n" + CommandLine.CreateHelpString() );
 
-        return new CommandLine( definitionFile, outputFile );
+        return new CommandLine( definitionFile, outputFile, title );
         }
 
         /// <summary>
@@ -46,22 +50,26 @@ namespace BookmarkCreator.CmdLines
         /// </summary>
         /// <param name="definitionFile">The file path as a definition file.</param>
         /// <param name="outputFile">The html-file path as a result.</param>
-        public CommandLine( string definitionFile, string outputFile )
+        /// <param name="title">The title for the tag "title", html.</param>
+        public CommandLine( string definitionFile, string outputFile, string title )
         {
             this.DefinitionFilePath = definitionFile;
             this.OutputFilePath     = outputFile;
+            this.Title              = title;
         }
 
         public string DefinitionFilePath{ get; private set; }
 
         public string OutputFilePath{ get; private set; }
 
+        public string Title{ get; private set; }
+
         private static string CreateHelpString()
         {
             var builder = new StringBuilder();
             builder.Append( "[CMD]\n" );
             builder.Append( "$ BookmarkCreator -g\n" );
-            builder.Append( "$ BookmarkCreator --definition=<FILEPATH> [--output=<FILEPATH>]\n" );
+            builder.Append( "$ BookmarkCreator --definition=<FILEPATH> [--output=<FILEPATH>] [--title=<STR>]\n" );
             builder.Append( "$ BookmarkCreator --help\n" );
             builder.Append( "\n" );
             builder.Append( "[ARGUMENTS]\n" );
@@ -73,6 +81,9 @@ namespace BookmarkCreator.CmdLines
             builder.Append( "--output=<FILEPATH>:\n" );
             builder.Append( "    Pass the directory path where you want to create a result html file on.\n" );
             builder.Append( "    (Shortened: -o=<FILEPATH>)\n" );
+            builder.Append( "--title=<STR>:\n" );
+            builder.Append( "    Pass the title for the tag \"title\", with HTML.\n" );
+            builder.Append( "    (Shortened: -t=<STR>)\n" );
             builder.Append( "--help:\n" );
             builder.Append( "    Show this help.\n" );
             builder.Append( "    (Shortened: -h)\n" );
