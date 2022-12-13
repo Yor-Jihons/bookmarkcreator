@@ -1,0 +1,24 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net6.0</TargetFramework>
+    <AssemblyName>BookmarkCreator</AssemblyName>
+    <ApplicationIcon>.\res\Icons\appicon.ico</ApplicationIcon>
+    <DebugType Condition="'$(Configuration)' != 'Debug'">none</DebugType>
+    <Version>1.0.0</Version>
+    <Company>Company1</Company>
+    <Copyright>Mr.Crack</Copyright>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Content Remove="res\tmplts\template.html" />
+    <EmbeddedResource Include="res\tmplts\template.html" LogicalName="template.html" />
+  </ItemGroup>
+
+  <!-- Show message -->
+  <Target Name="PrintCompile" BeforeTargets="Build">
+    <Message Text="----- Compile $(AssemblyName) as CLI, $(Configuration) -----" Importance="high" />
+  </Target>
+
+</Project>
