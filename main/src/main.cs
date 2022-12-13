@@ -6,9 +6,17 @@ namespace BookmarkCreator
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello C#!");
-            for( int i = 0; i < 3; i++ ){
-                Console.WriteLine( "C# " + i );
+            try
+            {
+                var cmdline = CmdLines.CommandLine.Create( args );
+                if( cmdline == null ) return;
+
+                Console.WriteLine( cmdline.DefinitionFilePath );
+                Console.WriteLine( cmdline.OutputFilePath );
+            }
+            catch( Exception e )
+            {
+                Console.WriteLine( e );
             }
         }
     }

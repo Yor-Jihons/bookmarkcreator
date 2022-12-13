@@ -1,6 +1,6 @@
 @echo off
 
-set PRODUCT=Sample
+set PRODUCT=BookmarkCreator
 set CSDEBUGEXE=.\bin\Debug\net6.0\%PRODUCT%.exe
 set CSRELEASEEXE=.\bin\Release\net6.0\%PRODUCT%.exe
 set CSPUBLISHEXE=.\bin\Publish\%PRODUCT%.exe
@@ -24,7 +24,8 @@ exit /b
 rem ------------------------- 関数定義 -------------------------
 
 :RunDebug
-    %CSDEBUGEXE% --htmlfilepath="abc.html" --version
+    rem %CSDEBUGEXE% --definition="df.data" --output=".\test\result.html"
+    %CSDEBUGEXE% -g
 exit /b 0
 
 :RunRelease
