@@ -1,0 +1,5 @@
+// head: TITLE - URL - SUMMARY - GENRES
+//    This should be written like CSV files.
+//    Per genres should be start with sharp character, like "#test1#checked#data1"
+僕が生まれた理由,http://www.boku/,概要1,#music#lyrics#songs
+arigato,http://www.arigato/,概要2,#music#lyrics#songs

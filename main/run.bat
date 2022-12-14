@@ -24,7 +24,7 @@ exit /b
 rem ------------------------- 関数定義 -------------------------
 
 :RunDebug
-    %CSDEBUGEXE% --definition="df.data" --output=".\test\result.html"
+    %CSDEBUGEXE% --definition=".\test\definition.data" --output=".\test\result.html"
     rem %CSDEBUGEXE% -g
 exit /b 0
 
