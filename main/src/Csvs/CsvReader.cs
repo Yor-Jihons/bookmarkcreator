@@ -10,7 +10,10 @@ namespace BookmarkCreator.Csvs
             List<Data> data = new List<Data>();
             var sr = new System.IO.StreamReader( filepath, new System.Text.UTF8Encoding( false ) );
             String tmp = "";
-            while( (tmp = sr.ReadLine()) != null ){
+            while( (tmp = sr.ReadLine()) != null )
+            {
+                if( tmp.StartsWith( "// " ) ) continue;
+
                 data.Add( Data.Create( tmp ) );
             }
             sr.Close();
