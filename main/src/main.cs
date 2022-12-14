@@ -13,6 +13,7 @@ namespace BookmarkCreator
 
                 Console.WriteLine( cmdline.DefinitionFilePath );
                 Console.WriteLine( cmdline.OutputFilePath );
+                Console.WriteLine( cmdline.Title );
             }
             catch( Exception e )
             {
