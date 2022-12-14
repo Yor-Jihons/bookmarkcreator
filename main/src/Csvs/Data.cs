@@ -14,15 +14,15 @@ namespace BookmarkCreator.Csvs
 
             if( texts.Length < 2 ) throw new Exceptions.FileFormatException( "The definition file has no URL for a item." );
 
-            string url = texts[2];
+            string url = texts[1];
 
             if( texts.Length < 3 ) throw new Exceptions.FileFormatException( "The definition file has no summary for a item." );
 
-            string summary = texts[3];
+            string summary = texts[2];
 
             if( texts.Length < 4 ) throw new Exceptions.FileFormatException( "The definition file has no genre for a item." );
 
-            var genres = Genre.Create( texts[4] );
+            var genres = Genre.Create( texts[3] );
 
         return new Data( title, url, summary, genres );
         }

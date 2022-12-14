@@ -5,7 +5,7 @@ namespace BookmarkCreator.Csvs
 {
     public class CsvReader
     {
-        public List<Data> Read( string filepath )
+        public static List<Data> Read( string filepath )
         {
             List<Data> data = new List<Data>();
             var sr = new System.IO.StreamReader( filepath, new System.Text.UTF8Encoding( false ) );
