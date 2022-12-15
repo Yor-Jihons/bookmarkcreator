@@ -18,10 +18,25 @@ namespace BookmarkCreator
 
                 var data = Csvs.CsvReader.Read( cmdline.DefinitionFilePath );
 
-                Dictionary<string, List<Csvs.Data> > tags = new Dictionary<string, List<Csvs.Data> >();
+                Dictionary<string, Csvs.DataList> tags = new Dictionary<string, Csvs.DataList>();
                 foreach( var d in data )
                 {
-                    Console.WriteLine( d.ToString() );
+                    var genres = d.GetGenres();
+                    foreach( var genre in genres )
+                    {
+                        if( !tags.ContainsKey( genre ) )
+                        {
+                            tags[ genre ] = new Csvs.DataList();
+                        }
+
+                        tags[ genre ].Add( d );
+                    }
+                }
+
+                foreach( KeyValuePair<string, Csvs.DataList> item in tags )
+                {
+                    Console.WriteLine( "[Key]\n" + item.Key );
+                    Console.WriteLine( "[Value]\n" + item.Value.ToString() );
                 }
             }
             catch( Exception e )
