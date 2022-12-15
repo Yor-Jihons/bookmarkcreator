@@ -36,9 +36,9 @@ namespace BookmarkCreator.Csvs
             this.Genre   = genre;
         }
 
-        public List<string> CreateList4TagsNotRegistered( Dictionary< string, List<Csvs.Data> > tags )
+        public string[] GetGenres()
         {
-            return this.Genre.CreateList4TagsNotRegistered( tags );
+            return this.Genre.Genres;
         }
 
         public override string ToString()
