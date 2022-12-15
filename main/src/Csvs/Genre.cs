@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 
 namespace BookmarkCreator.Csvs
 {
@@ -23,6 +24,19 @@ namespace BookmarkCreator.Csvs
                 text += this.Genres[i];
             }
         return text;
+        }
+
+        public List<string> CreateList4TagsNotRegistered( Dictionary< string, List<Csvs.Data> > tags )
+        {
+            List<string> list = new List<string>();
+            foreach( var genre in this.Genres )
+            {
+                if( !tags.ContainsKey( genre ) )
+                {
+                    list.Add( genre );
+                }
+            }
+        return list;
         }
 
         private string[] Genres{ get; set; }
