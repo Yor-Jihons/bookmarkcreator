@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 
 namespace BookmarkCreator.Csvs
 {
@@ -27,13 +28,17 @@ namespace BookmarkCreator.Csvs
         return new Data( title, url, summary, genres );
         }
 
-        // タイトル - URL - 概要 - ジャンル
         public Data( string title, string url, string summary, Genre genre )
         {
             this.Title   = title;
             this.Url     = url;
             this.Summary = summary;
             this.Genre   = genre;
+        }
+
+        public List<string> CreateList4TagsNotRegistered( Dictionary<string, Data> tags )
+        {
+            return this.Genre.CreateList4TagsNotRegistered( tags );
         }
 
         public override string ToString()
