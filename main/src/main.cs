@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 
 namespace BookmarkCreator
 {
@@ -16,6 +17,8 @@ namespace BookmarkCreator
                 Console.WriteLine( cmdline.Title );
 
                 var data = Csvs.CsvReader.Read( cmdline.DefinitionFilePath );
+
+                Dictionary<string, List<Csvs.Data> > tags = new Dictionary<string, List<Csvs.Data> >();
                 foreach( var d in data )
                 {
                     Console.WriteLine( d.ToString() );

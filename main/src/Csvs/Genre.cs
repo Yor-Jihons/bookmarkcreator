@@ -26,7 +26,7 @@ namespace BookmarkCreator.Csvs
         return text;
         }
 
-        public List<string> CreateList4TagsNotRegistered( Dictionary<string, Data> tags )
+        public List<string> CreateList4TagsNotRegistered( Dictionary< string, List<Csvs.Data> > tags )
         {
             List<string> list = new List<string>();
             foreach( var genre in this.Genres )
