@@ -5,7 +5,7 @@ namespace BookmarkCreator
 {
     class Program
     {
-        static void Main(string[] args)
+        static void Main( string[] args )
         {
             try
             {
@@ -35,10 +35,9 @@ namespace BookmarkCreator
 
                 foreach( KeyValuePair<string, Csvs.DataList> item in tags )
                 {
-                    Console.WriteLine( "[Key]\n" + item.Key );
-                    Console.WriteLine( "[Value]\n" + item.Value.ToString() );
 
-                    Console.WriteLine( "[RESULT]\n" + item.Value.ToHtmlString() );
+                    Console.WriteLine( "[List]\n" + item.Value.ToListHtmlString() );
+                    Console.WriteLine( "[Table]\n" + item.Value.ToTableHtmlString() );
                 }
             }
             catch( Exception e )

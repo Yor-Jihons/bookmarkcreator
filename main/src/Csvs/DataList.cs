@@ -29,11 +29,23 @@ namespace BookmarkCreator.Csvs
         return builder.ToString();
         }
 
-        public string ToHtmlString()
+        public string ToListHtmlString()
+        {
+            var builder = new StringBuilder();
+            builder.Append( "        " );
+            builder.Append( "<li><a href=\"#" );
+            builder.Append( this.Title );
+            builder.Append( "\">" );
+            builder.Append( this.Title );
+            builder.Append( "</a></li>" );
+        return builder.ToString();
+        }
+
+        public string ToTableHtmlString()
         {
             var builder = new StringBuilder();
             builder.Append( "    ");
-            builder.Append( "<h2 id=\"#" );
+            builder.Append( "<h2 id=\"" );
             builder.Append( this.Title );
             builder.Append( "\">" );
             builder.Append( this.Title );
