@@ -5,7 +5,7 @@ namespace BookmarkCreator
 {
     class Program
     {
-        static void Main(string[] args)
+        static void Main( string[] args )
         {
             try
             {
@@ -26,7 +26,7 @@ namespace BookmarkCreator
                     {
                         if( !tags.ContainsKey( genre ) )
                         {
-                            tags[ genre ] = new Csvs.DataList();
+                            tags[ genre ] = new Csvs.DataList( genre );
                         }
 
                         tags[ genre ].Add( d );
@@ -35,8 +35,9 @@ namespace BookmarkCreator
 
                 foreach( KeyValuePair<string, Csvs.DataList> item in tags )
                 {
-                    Console.WriteLine( "[Key]\n" + item.Key );
-                    Console.WriteLine( "[Value]\n" + item.Value.ToString() );
+
+                    Console.WriteLine( "[List]\n" + item.Value.ToListHtmlString() );
+                    Console.WriteLine( "[Table]\n" + item.Value.ToTableHtmlString() );
                 }
             }
             catch( Exception e )
