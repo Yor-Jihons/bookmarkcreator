@@ -26,7 +26,7 @@ namespace BookmarkCreator
                     {
                         if( !tags.ContainsKey( genre ) )
                         {
-                            tags[ genre ] = new Csvs.DataList();
+                            tags[ genre ] = new Csvs.DataList( genre );
                         }
 
                         tags[ genre ].Add( d );
@@ -37,6 +37,8 @@ namespace BookmarkCreator
                 {
                     Console.WriteLine( "[Key]\n" + item.Key );
                     Console.WriteLine( "[Value]\n" + item.Value.ToString() );
+
+                    Console.WriteLine( "[RESULT]\n" + item.Value.ToHtmlString() );
                 }
             }
             catch( Exception e )

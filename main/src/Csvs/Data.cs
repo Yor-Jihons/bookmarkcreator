@@ -1,3 +1,4 @@
+using System.Text;
 using System;
 using System.Collections.Generic;
 
@@ -39,6 +40,34 @@ namespace BookmarkCreator.Csvs
         public string[] GetGenres()
         {
             return this.Genre.Genres;
+        }
+
+        public string ToTableHtmlString( int id )
+        {
+            var builder = new StringBuilder();
+            builder.Append( "            " );
+            builder.Append( "<tr>\n" );
+            builder.Append( "                " );
+            builder.Append( "<td class=\"id\">" );
+            builder.Append( id.ToString() );
+            builder.Append( "</td>\n" );
+            builder.Append( "                " );
+            builder.Append( "<td class=\"title\"><a href=\"" );
+            builder.Append( this.Url );
+            builder.Append( "\">" );
+            builder.Append( this.Title );
+            builder.Append( "</a></td>\n" );
+            builder.Append( "                " );
+            builder.Append( "<td class=\"url\">" );
+            builder.Append( this.Url );
+            builder.Append( "</td>\n" );
+            builder.Append( "                " );
+            builder.Append( "<td class=\"summary\">" );
+            builder.Append( this.Summary );
+            builder.Append( "</td>\n" );
+            builder.Append( "            " );
+            builder.Append( "</tr>\n" );
+        return builder.ToString();
         }
 
         public override string ToString()
