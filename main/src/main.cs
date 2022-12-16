@@ -1,3 +1,4 @@
+using System.Text;
 using System;
 using System.Collections.Generic;
 
@@ -33,12 +34,27 @@ namespace BookmarkCreator
                     }
                 }
 
+                var listBuilder = new StringBuilder();
+                listBuilder.Append( "    <ul>\n" );
+                var tableBuilder = new StringBuilder();
+
                 foreach( KeyValuePair<string, Csvs.DataList> item in tags )
                 {
-
-                    Console.WriteLine( "[List]\n" + item.Value.ToListHtmlString() );
-                    Console.WriteLine( "[Table]\n" + item.Value.ToTableHtmlString() );
+                    listBuilder.Append( item.Value.ToListHtmlString() );
+                    listBuilder.Append( "\n" );
+                    tableBuilder.Append( item.Value.ToTableHtmlString() );
+                    tableBuilder.Append( "\n" );
                 }
+
+                listBuilder.Append( "    </ul>\n\n" );
+
+                Console.WriteLine( "[LIST]\n" + listBuilder.ToString() );
+                Console.WriteLine( "[TABLE]\n" + tableBuilder.ToString() );
+
+                var contentBuilder = new StringBuilder( listBuilder.ToString() );
+                contentBuilder.Append( tableBuilder );
+
+                Console.WriteLine( "[CONTENT]\n" + contentBuilder.ToString() );
             }
             catch( Exception e )
             {
