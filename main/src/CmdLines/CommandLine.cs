@@ -8,7 +8,7 @@ namespace BookmarkCreator.CmdLines
     {
         public static CommandLine Create( string[] args )
         {
-            string definitionFile = "", outputFile = @".\bookmark.html", title = "bookmark";
+            string definitionFile = "", outputFile = @".\bookmark.html", title = "bookmark", template = "";
             StringComparison sc = StringComparison.CurrentCultureIgnoreCase;
             foreach( var arg in args )
             {
@@ -33,6 +33,10 @@ namespace BookmarkCreator.CmdLines
                 {
                     outputFile = CommandLine.SubStringEx( arg );
                 }
+                else if( arg.Contains( "--template=" )  || arg.Contains( "-tmp=" ) || arg.Contains( "-tmplt=" ) )
+                {
+                    template = CommandLine.SubStringEx( arg );
+                }
                 else if( arg.Contains( "--title=", sc ) || arg.Contains( "-t=", sc ) )
                 {
                     title = CommandLine.SubStringEx( arg );
@@ -42,7 +46,7 @@ namespace BookmarkCreator.CmdLines
             if( definitionFile.Equals( string.Empty ) )
                 throw new Exceptions.CmdLineArgException( "\n" + CommandLine.CreateHelpString() );
 
-        return new CommandLine( definitionFile, outputFile, title );
+        return new CommandLine( definitionFile, outputFile, title, template );
         }
 
         /// <summary>
@@ -51,11 +55,13 @@ namespace BookmarkCreator.CmdLines
         /// <param name="definitionFile">The file path as a definition file.</param>
         /// <param name="outputFile">The html-file path as a result.</param>
         /// <param name="title">The title for the tag "title", html.</param>
-        public CommandLine( string definitionFile, string outputFile, string title )
+        /// <param name="template">The path of the template file for result html file.</param>
+        public CommandLine( string definitionFile, string outputFile, string title, string template )
         {
             this.DefinitionFilePath = definitionFile;
             this.OutputFilePath     = outputFile;
             this.Title              = title;
+            this.TemplateFilePath   = template;
         }
 
         public string DefinitionFilePath{ get; private set; }
@@ -64,12 +70,14 @@ namespace BookmarkCreator.CmdLines
 
         public string Title{ get; private set; }
 
+        public string TemplateFilePath{ get; private set; }
+
         private static string CreateHelpString()
         {
             var builder = new StringBuilder();
             builder.Append( "[CMD]\n" );
             builder.Append( "$ BookmarkCreator -g\n" );
-            builder.Append( "$ BookmarkCreator --definition=<FILEPATH> [--output=<FILEPATH>] [--title=<STR>]\n" );
+            builder.Append( "$ BookmarkCreator --definition=<FILEPATH> [--output=<FILEPATH>] [--title=<STR>] [--template=<FILEPATH>]\n" );
             builder.Append( "$ BookmarkCreator --help\n" );
             builder.Append( "\n" );
             builder.Append( "[ARGUMENTS]\n" );
@@ -84,6 +92,9 @@ namespace BookmarkCreator.CmdLines
             builder.Append( "--title=<STR>:\n" );
             builder.Append( "    Pass the title for the tag \"title\", with HTML.\n" );
             builder.Append( "    (Shortened: -t=<STR>)\n" );
+            builder.Append( "--template=<FILEPATH>:\n" );
+            builder.Append( "    Pass the file path as a template file. If you ommit this option, this program will run with a default template.\n" );
+            builder.Append( "    (Shortened: -tmp=<FILEPATH> or -tmplt=<FILEPATH>)\n" );
             builder.Append( "--help:\n" );
             builder.Append( "    Show this help.\n" );
             builder.Append( "    (Shortened: -h)\n" );
