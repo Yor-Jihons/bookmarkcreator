@@ -17,6 +17,8 @@ namespace BookmarkCreator
                 Console.WriteLine( cmdline.OutputFilePath );
                 Console.WriteLine( cmdline.Title );
 
+                Console.WriteLine( cmdline.TemplateFilePath );
+
                 var data = Csvs.CsvReader.Read( cmdline.DefinitionFilePath );
 
                 Dictionary<string, Csvs.DataList> tags = new Dictionary<string, Csvs.DataList>();
@@ -48,13 +50,19 @@ namespace BookmarkCreator
 
                 listBuilder.Append( "    </ul>\n\n" );
 
-                Console.WriteLine( "[LIST]\n" + listBuilder.ToString() );
-                Console.WriteLine( "[TABLE]\n" + tableBuilder.ToString() );
-
                 var contentBuilder = new StringBuilder( listBuilder.ToString() );
                 contentBuilder.Append( tableBuilder );
 
-                Console.WriteLine( "[CONTENT]\n" + contentBuilder.ToString() );
+                var template = (new Factories.TemplateFileScanner( cmdline.TemplateFilePath )).Scan();
+
+                var resultBuilder = new StringBuilder( template );
+                resultBuilder.Replace( "[HERE]", contentBuilder.ToString() );
+
+                resultBuilder.Replace( "[TITLE]", cmdline.Title );
+
+                Console.WriteLine( "[RESULT]\n" + resultBuilder.ToString() );
+
+                (new Factories.FilePrinter( cmdline.OutputFilePath )).Print( resultBuilder.ToString() );
             }
             catch( Exception e )
             {
