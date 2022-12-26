@@ -1,6 +1,4 @@
-using System.Text;
 using System;
-using System.Collections.Generic;
 
 namespace BookmarkCreator
 {
@@ -21,7 +19,7 @@ namespace BookmarkCreator
 
                 (new Factories.FilePrinter( cmdline.OutputFilePath )).Print( htmlString );
 
-                Console.WriteLine( "Created " + cmdline.OutputFilePath + " the bookmark-html file" );
+                Console.WriteLine( "Created " + cmdline.OutputFilePath + " the bookmark-html file." );
             }
             catch( Exception e )
             {
