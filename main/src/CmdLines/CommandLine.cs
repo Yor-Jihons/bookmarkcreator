@@ -1,13 +1,26 @@
-using System.Security.Cryptography.X509Certificates;
+/**
+* @file
+* @brief The class to manage the command-line arguments.
+*/
+
 using System;
 using System.Text;
 
 namespace BookmarkCreator.CmdLines
 {
+    /// <summary>
+    /// The class to manage the command-line arguments.
+    /// </summary>
     public class CommandLine
     {
+        /// <summary>
+        /// Create the object of this class.
+        /// </summary>
+        /// <param name="args">The commandline-arguments.</param>
+        /// <returns>The object of this class.</returns>
         public static CommandLine Create( string[] args )
         {
+            // Analyze the commandline arguments.
             string definitionFile = "", outputFile = @".\bookmark.html", title = "bookmark", template = "";
             StringComparison sc = StringComparison.CurrentCultureIgnoreCase;
             foreach( var arg in args )
@@ -43,6 +56,7 @@ namespace BookmarkCreator.CmdLines
                 }
             }
 
+            // If the arguments lacked, throw the Exception.
             if( definitionFile.Equals( string.Empty ) )
                 throw new Exceptions.CmdLineArgException( "\n" + CommandLine.CreateHelpString() );
 
@@ -64,14 +78,22 @@ namespace BookmarkCreator.CmdLines
             this.TemplateFilePath   = template;
         }
 
+        /// <value>The file path as a definition file.</value>
         public string DefinitionFilePath{ get; private set; }
 
+        /// <value>The file path as a output file.</value>
         public string OutputFilePath{ get; private set; }
 
+        /// <value>The string as a title.</value>
         public string Title{ get; private set; }
 
+        /// <value>The file path as a template file.</value>
         public string TemplateFilePath{ get; private set; }
 
+        /// <summary>
+        /// Create the help string for cmdline.
+        /// </summary>
+        /// <returns>The string for cmdline.</returns>
         private static string CreateHelpString()
         {
             var builder = new StringBuilder();

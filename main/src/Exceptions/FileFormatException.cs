@@ -1,17 +1,20 @@
 /**
-* @file CmdLineArgException.cs
-* @brief The exception which the command-line arguments process was failed.
+* @file
+* @brief The exception which reading a file was failed.
 */
 using System;
 
 namespace BookmarkCreator.Exceptions
 {
+    /// <summary>
+    /// The exception which reading a file was failed.
+    /// </summary>
     public class FileFormatException : System.Exception
     {
         /// <summary>
-        /// コンストラクタ
+        /// Constructor.
         /// </summary>
-        /// <param name="msg">表示文字列</param>
+        /// <param name="msg">The message to show.</param>
         public FileFormatException( string msg ) : base(msg){}
     }
 }
