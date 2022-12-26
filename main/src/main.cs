@@ -13,11 +13,11 @@ namespace BookmarkCreator
                 var cmdline = CmdLines.CommandLine.Create( args );
                 if( cmdline == null ) return;
 
-                Console.WriteLine( cmdline.DefinitionFilePath );
-                Console.WriteLine( cmdline.OutputFilePath );
-                Console.WriteLine( cmdline.Title );
+                //Console.WriteLine( cmdline.DefinitionFilePath );
+                //Console.WriteLine( cmdline.OutputFilePath );
+                //Console.WriteLine( cmdline.Title );
 
-                Console.WriteLine( cmdline.TemplateFilePath );
+                //Console.WriteLine( cmdline.TemplateFilePath );
 
                 var data = Csvs.CsvReader.Read( cmdline.DefinitionFilePath );
 
@@ -56,11 +56,11 @@ namespace BookmarkCreator
                 var template = (new Factories.TemplateFileScanner( cmdline.TemplateFilePath )).Scan();
 
                 var resultBuilder = new StringBuilder( template );
-                resultBuilder.Replace( "[HERE]", contentBuilder.ToString() );
+                //resultBuilder.Replace( "[HERE]", contentBuilder.ToString() );
 
-                resultBuilder.Replace( "[TITLE]", cmdline.Title );
+                //resultBuilder.Replace( "[TITLE]", cmdline.Title );
 
-                Console.WriteLine( "[RESULT]\n" + resultBuilder.ToString() );
+                //Console.WriteLine( "[RESULT]\n" + resultBuilder.ToString() );
 
                 (new Factories.FilePrinter( cmdline.OutputFilePath )).Print( resultBuilder.ToString() );
             }
