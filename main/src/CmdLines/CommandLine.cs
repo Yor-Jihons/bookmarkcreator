@@ -1,3 +1,8 @@
+/**
+* @file
+* @brief The class to manage the command-line arguments.
+*/
+
 using System;
 using System.Text;
 
