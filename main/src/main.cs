@@ -63,6 +63,8 @@ namespace BookmarkCreator
                 //Console.WriteLine( "[RESULT]\n" + resultBuilder.ToString() );
 
                 (new Factories.FilePrinter( cmdline.OutputFilePath )).Print( resultBuilder.ToString() );
+
+                Console.WriteLine( "Created " + cmdline.OutputFilePath + " the bookmark-html file" );
             }
             catch( Exception e )
             {
