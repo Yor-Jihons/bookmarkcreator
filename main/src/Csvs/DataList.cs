@@ -1,23 +1,41 @@
-using System.Globalization;
-using System;
+/**
+* @file
+* @brief The class as a list in order to manage the data which the definition-file has.
+*/
+
 using System.Collections.Generic;
 using System.Text;
 
 namespace BookmarkCreator.Csvs
 {
+    /// <summary>
+    /// The class as a list in order to manage the data which the definition-file has.
+    /// </summary>
     public class DataList
     {
+        /// <summary>
+        /// The class as a list in order to manage the data which the definition-file has.
+        /// </summary>
+        /// <param name="title">The title for the HTML file.</param>
         public DataList( string title )
         {
             this.Title = title;
             this.Data = new List<Data>();
         }
 
+        /// <summary>
+        /// Add an object of the class Data.
+        /// </summary>
+        /// <param name="data">An object of the class Data.</param>
         public void Add( Csvs.Data data )
         {
             this.Data.Add( data );
         }
 
+        /// <summary>
+        /// Create the string made from the data which this object has.
+        /// </summary>
+        /// <returns>The string made from the data which this object has.</returns>
         public override string ToString()
         {
             var builder = new StringBuilder();
@@ -29,6 +47,10 @@ namespace BookmarkCreator.Csvs
         return builder.ToString();
         }
 
+        /// <summary>
+        /// Create an html string for a list.
+        /// </summary>
+        /// <returns>An html string for a list.</returns>
         public string ToListHtmlString()
         {
             var builder = new StringBuilder();
@@ -41,6 +63,10 @@ namespace BookmarkCreator.Csvs
         return builder.ToString();
         }
 
+        /// <summary>
+        /// Create an html string for the table.
+        /// </summary>
+        /// <returns>An html string for the table.</returns>
         public string ToTableHtmlString()
         {
             var builder = new StringBuilder();
@@ -80,8 +106,10 @@ namespace BookmarkCreator.Csvs
         return builder.ToString();
         }
 
+        /// <value>The title for the HTML file.</value>
         private string Title{ get; set; }
 
+        /// <value>The list of the class Data, which this object manages.</value>
         private List<Csvs.Data> Data{ get; set; }
     }
 }
