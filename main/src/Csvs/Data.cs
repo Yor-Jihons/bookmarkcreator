@@ -1,11 +1,22 @@
+/**
+* @file
+* @brief The class to contain the data which the definition-file has.
+*/
+
 using System.Text;
-using System;
-using System.Collections.Generic;
 
 namespace BookmarkCreator.Csvs
 {
+    /// <summary>
+    /// The class to contain the data which the definition-file has.
+    /// </summary>
     public class Data
     {
+        /// <summary>
+        /// Create the object of this class (as a factory).
+        /// </summary>
+        /// <param name="text">The text which the definition-file has.</param>
+        /// <returns>The object of this class.</returns>
         public static Data Create( string text )
         {
             var texts = text.Split( "," );
@@ -29,7 +40,14 @@ namespace BookmarkCreator.Csvs
         return new Data( title, url, summary, genres );
         }
 
-        public Data( string title, string url, string summary, Genre genre )
+        /// <summary>
+        /// Constructor.
+        /// </summary>
+        /// <param name="title">The title for an url.</param>
+        /// <param name="url">The target url.</param>
+        /// <param name="summary">The summary text.</param>
+        /// <param name="genre">The object of the class Genre, which the url has.</param>
+        private Data( string title, string url, string summary, Genre genre )
         {
             this.Title   = title;
             this.Url     = url;
@@ -37,11 +55,20 @@ namespace BookmarkCreator.Csvs
             this.Genre   = genre;
         }
 
+        /// <summary>
+        /// Get the array of the class Genre.
+        /// </summary>
+        /// <returns>The array of the class Genre.</returns>
         public string[] GetGenres()
         {
             return this.Genre.Genres;
         }
 
+        /// <summary>
+        /// Creaate the html string for the table.
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns>The html string for the table.</returns>
         public string ToTableHtmlString( int id )
         {
             var builder = new StringBuilder();
@@ -70,14 +97,25 @@ namespace BookmarkCreator.Csvs
         return builder.ToString();
         }
 
+        /// <summary>
+        /// Create the string to debug.
+        /// </summary>
+        /// <returns>The string to debug.</returns>
         public override string ToString()
         {
             return "Title = " + this.Title + ", " + "Url = " + this.Url + ", " + "Summary = " + this.Summary + ", Genres = " + this.Genre.ToString();
         }
 
+        /// <value>The title for the Url.</value>
         private string Title{ get; set; }
+
+        /// <value>The Url.</value>
         private string Url{ get; set; }
+
+        /// <value>The summary text.</value>
         private string Summary{ get; set; }
+
+        /// <value>The object of the class Genre, which the Url has.</value>
         private Genre Genre{ get; set; }
     }
 }
