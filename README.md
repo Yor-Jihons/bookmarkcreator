@@ -41,4 +41,4 @@ This library is released under the MIT License.
 ## 6. Contact
 
 Author: Yor-Jihons
-GitHub: [BookmarkCreator](https://github.com/Yor-Jihons/BookmarkCreator)
+GitHub: [BookmarkCreator](https://github.com/Yor-Jihons/bookmarkcreator)

@@ -1,18 +1,22 @@
-<PRODUCT>
+BookmarkCreator
 ----------------------------
 
-Version: <PRODUCT> <VERSION>
-Author : Mr.Crack
+Version:
+BookmarkCreator 1.0.0
 
-Reason :
-  <REASON>
+Author:
+Yor-Jihons
+
+Reason:
+When I manages the URL which I refer to, it is bothers me.
+So I created this program, in order to manage them.
 
 Install:
-  Just unpack this zip-file.
+Just unpack this zip-file.
 
 System requirements:
-  Windows 7 later
+Windows 7 later
 
 Development environment:
-  Windows 10
-  C#.NET (.NET5)
+* Windows 11
+* C#.NET (.NET5)
