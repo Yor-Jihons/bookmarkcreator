@@ -23,3 +23,9 @@
     開発環境 :
                @ Windows 11
                @ C#.NET (.NET5)
+
+        謝辞 :
+               ICON:
+               URL: [icon-icons.com](https://icon-icons.com/ja/%E3%82%A2%E3%82%A4%E3%82%B3%E3%83%B3/%E3%82%A2%E3%83%97%E3%83%AA/129133)
+               Author: anonimo氏
+               License: CC Atribution
