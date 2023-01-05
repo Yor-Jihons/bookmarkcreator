@@ -7,8 +7,7 @@
     <ApplicationIcon>.\res\Icons\appicon.ico</ApplicationIcon>
     <DebugType Condition="'$(Configuration)' != 'Debug'">none</DebugType>
     <Version>1.0.0</Version>
-    <Company>Company1</Company>
-    <Copyright>Mr.Crack</Copyright>
+    <Copyright>Yor-Jihons</Copyright>
   </PropertyGroup>
 
   <ItemGroup>
