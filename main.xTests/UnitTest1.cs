@@ -34,7 +34,7 @@ public class UnitTest1
     }
 
     [Fact]
-    public void DataTest()
+    public void DataTest1()
     {
         string text = "How2Learn,http://how2learn.hahaha/,This is test.,#English#Spanish#French";
         var data = BookmarkCreator.Csvs.Data.Create( text );
@@ -48,5 +48,102 @@ public class UnitTest1
         exected1 += "                <td class=\"summary\">This is test.</td>\n";
         exected1 += "            </tr>\n";
         Assert.Equal( exected1, data.ToTableHtmlString( 1 ) );
+    }
+
+    [Fact]
+    public void DataTest2()
+    {
+        // タイトルが無い場合
+        try
+        {
+            string text1 = "#English#Spanish#French";
+            var data1 = BookmarkCreator.Csvs.Data.Create( text1 );
+            Assert.Equal( 2, 1 );
+        }
+        catch( Exception )
+        {
+            Assert.True( true );
+        }
+
+        // URLが無い場合
+        try
+        {
+            string text1 = "How2Learn";
+            var data1 = BookmarkCreator.Csvs.Data.Create( text1 );
+            Assert.Equal( 2, 1 );
+        }
+        catch( Exception )
+        {
+            Assert.True( true );
+        }
+
+        // Summaryが無い場合
+        try
+        {
+            string text1 = "How2Learn,http://how2learn.hahaha/";
+            var data1 = BookmarkCreator.Csvs.Data.Create( text1 );
+            Assert.Equal( 2, 1 );
+        }
+        catch( Exception )
+        {
+            Assert.True( true );
+        }
+
+        // Genresが無い場合
+        try
+        {
+            string text1 = "How2Learn,http://how2learn.hahaha/,This is test.";
+            var data1 = BookmarkCreator.Csvs.Data.Create( text1 );
+            Assert.Equal( 2, 1 );
+        }
+        catch( Exception )
+        {
+            Assert.True( true );
+        }
+
+        // タイトルが空の場合
+        try
+        {
+            string text1 = ",http://how2learn.hahaha/,This is test.,#English#Spanish#French";
+            var data1 = BookmarkCreator.Csvs.Data.Create( text1 );
+        }
+        catch( Exception )
+        {
+            Assert.True( true );
+        }
+
+        // URLが空の場合
+        try
+        {
+            string text1 = "How2Learn,,This is test.,#English#Spanish#French";
+            var data1 = BookmarkCreator.Csvs.Data.Create( text1 );
+        }
+        catch( Exception )
+        {
+            Assert.True( true );
+        }
+
+        // Sammaryが空の場合
+        try
+        {
+            string text1 = "How2Learn,http://how2learn.hahaha/,,#English#Spanish#French";
+            var data1 = BookmarkCreator.Csvs.Data.Create( text1 );
+            Assert.Equal( 1, 1 );
+        }
+        catch( Exception )
+        {
+            Assert.True( false );
+        }
+
+        // Genresが空の場合
+        try
+        {
+            string text1 = "How2Learn,http://how2learn.hahaha/,This is test.,";
+            var data1 = BookmarkCreator.Csvs.Data.Create( text1 );
+        }
+        catch( Exception )
+        {
+            Assert.True( true );
+        }
     }
 }

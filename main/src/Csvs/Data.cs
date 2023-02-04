@@ -21,11 +21,11 @@ namespace BookmarkCreator.Csvs
         {
             var texts = text.Split( "," );
 
-            if( texts.Length < 1 ) throw new Exceptions.FileFormatException( "The definition file has no title for a item." );
+            if( texts.Length < 1 || texts[0].Equals( string.Empty ) ) throw new Exceptions.FileFormatException( "The definition file has no title for a item." );
 
             string title = texts[0];
 
-            if( texts.Length < 2 ) throw new Exceptions.FileFormatException( "The definition file has no URL for a item." );
+            if( texts.Length < 2 || texts[1].Equals( string.Empty )  ) throw new Exceptions.FileFormatException( "The definition file has no URL for a item." );
 
             string url = texts[1];
 
@@ -33,7 +33,7 @@ namespace BookmarkCreator.Csvs
 
             string summary = texts[2];
 
-            if( texts.Length < 4 ) throw new Exceptions.FileFormatException( "The definition file has no genre for a item." );
+            if( texts.Length < 4 || texts[3].Equals( string.Empty )  ) throw new Exceptions.FileFormatException( "The definition file has no genre for a item." );
 
             var genres = Genre.Create( texts[3] );
 
