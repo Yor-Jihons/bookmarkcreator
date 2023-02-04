@@ -186,4 +186,15 @@ public class UnitTest1
 
         Assert.Equal( exected, dataList.ToTableHtmlString() );
     }
+
+    [Fact]
+    public void CsvReaderTest()
+    {
+        string filepath = @"..\..\..\sample.csv";
+        System.Collections.Generic.List<BookmarkCreator.Csvs.Data> ret = BookmarkCreator.Csvs.CsvReader.Read( filepath );
+
+        Assert.Equal( 2, ret.Count );
+
+        Assert.Equal( "Title = How2Learn, Url = http://how2learn.hahaha/, Summary = This is test., Genres =  #English #Spanish #French", ret[1].ToString() );
+    }
 }
