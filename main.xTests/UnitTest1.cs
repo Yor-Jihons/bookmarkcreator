@@ -197,4 +197,94 @@ public class UnitTest1
 
         Assert.Equal( "Title = How2Learn, Url = http://how2learn.hahaha/, Summary = This is test., Genres =  #English #Spanish #French", ret[1].ToString() );
     }
+
+    [Fact]
+    public void ExecutorTest()
+    {
+        string filepath = @"..\..\..\sample.csv";
+        var ret = BookmarkCreator.Executions.Executor.Read( filepath );
+
+        string exected1 = "";
+        exected1 += "Title = WhyYouLearn, Url = http://whyoulearn.hahaha/, Summary = This is test., Genres =  #English";
+        exected1 += "\n";
+        exected1 += "Title = How2Learn, Url = http://how2learn.hahaha/, Summary = This is test., Genres =  #English #Spanish #French";
+        exected1 += "\n";
+        Assert.Equal( exected1, ret[ "English" ].ToString() );
+
+        string exected2 = "";
+        exected2 += "Title = How2Learn, Url = http://how2learn.hahaha/, Summary = This is test., Genres =  #English #Spanish #French";
+        exected2 += "\n";
+        Assert.Equal( exected2, ret[ "Spanish" ].ToString() );
+
+        string exected3 = "";
+        exected3 += "    <ul>\n";
+        exected3 += "        <li><a href=\"#English\">English</a></li>\n";
+        exected3 += "        <li><a href=\"#Spanish\">Spanish</a></li>\n";
+        exected3 += "        <li><a href=\"#French\">French</a></li>\n";
+        exected3 += "    </ul>\n";
+        exected3 += "\n";
+        exected3 += "    <h2 id=\"English\">English</h2>\n";
+        exected3 += "    <div class=\"table_area\">\n";
+        exected3 += "        <table class=\"web_list_table\">\n";
+        exected3 += "            <tr>\n";
+        exected3 += "                <th class=\"id\">ID</th>\n";
+        exected3 += "                <th class=\"title\">タイトル</th>\n";
+        exected3 += "                <th class=\"url\">URL</th>\n";
+        exected3 += "                <th class=\"summary\">概要</th>\n";
+        exected3 += "            </tr>\n";
+        exected3 += "\n";
+        exected3 += "            <tr>\n";
+        exected3 += "                <td class=\"id\">1</td>\n";
+        exected3 += "                <td class=\"title\"><a href=\"http://whyoulearn.hahaha/\">WhyYouLearn</a></td>\n";
+        exected3 += "                <td class=\"url\">http://whyoulearn.hahaha/</td>\n";
+        exected3 += "                <td class=\"summary\">This is test.</td>\n";
+        exected3 += "            </tr>\n";
+        exected3 += "            <tr>\n";
+        exected3 += "                <td class=\"id\">2</td>\n";
+        exected3 += "                <td class=\"title\"><a href=\"http://how2learn.hahaha/\">How2Learn</a></td>\n";
+        exected3 += "                <td class=\"url\">http://how2learn.hahaha/</td>\n";
+        exected3 += "                <td class=\"summary\">This is test.</td>\n";
+        exected3 += "            </tr>\n";
+        exected3 += "        </table>\n";
+        exected3 += "    </div>\n";
+        exected3 += "\n";
+        exected3 += "    <h2 id=\"Spanish\">Spanish</h2>\n";
+        exected3 += "    <div class=\"table_area\">\n";
+        exected3 += "        <table class=\"web_list_table\">\n";
+        exected3 += "            <tr>\n";
+        exected3 += "                <th class=\"id\">ID</th>\n";
+        exected3 += "                <th class=\"title\">タイトル</th>\n";
+        exected3 += "                <th class=\"url\">URL</th>\n";
+        exected3 += "                <th class=\"summary\">概要</th>\n";
+        exected3 += "            </tr>\n";
+        exected3 += "\n";
+        exected3 += "            <tr>\n";
+        exected3 += "                <td class=\"id\">1</td>\n";
+        exected3 += "                <td class=\"title\"><a href=\"http://how2learn.hahaha/\">How2Learn</a></td>\n";
+        exected3 += "                <td class=\"url\">http://how2learn.hahaha/</td>\n";
+        exected3 += "                <td class=\"summary\">This is test.</td>\n";
+        exected3 += "            </tr>\n";
+        exected3 += "        </table>\n";
+        exected3 += "    </div>\n";
+        exected3 += "\n";
+        exected3 += "    <h2 id=\"French\">French</h2>\n";
+        exected3 += "    <div class=\"table_area\">\n";
+        exected3 += "        <table class=\"web_list_table\">\n";
+        exected3 += "            <tr>\n";
+        exected3 += "                <th class=\"id\">ID</th>\n";
+        exected3 += "                <th class=\"title\">タイトル</th>\n";
+        exected3 += "                <th class=\"url\">URL</th>\n";
+        exected3 += "                <th class=\"summary\">概要</th>\n";
+        exected3 += "            </tr>\n";
+        exected3 += "\n";
+        exected3 += "            <tr>\n";
+        exected3 += "                <td class=\"id\">1</td>\n";
+        exected3 += "                <td class=\"title\"><a href=\"http://how2learn.hahaha/\">How2Learn</a></td>\n";
+        exected3 += "                <td class=\"url\">http://how2learn.hahaha/</td>\n";
+        exected3 += "                <td class=\"summary\">This is test.</td>\n";
+        exected3 += "            </tr>\n";
+        exected3 += "        </table>\n";
+        exected3 += "    </div>\n\n";
+        Assert.Equal( exected3, BookmarkCreator.Executions.Executor.CreateContentString( ret ) );
+    }
 }
