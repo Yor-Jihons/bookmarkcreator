@@ -146,4 +146,44 @@ public class UnitTest1
             Assert.True( true );
         }
     }
+
+    [Fact]
+    public void DataListTest()
+    {
+        var dataList = new BookmarkCreator.Csvs.DataList( "Bookmark2" );
+        string text1 = "How2Learn,http://how2learn.hahaha/,This is test.,#English#Spanish#French";
+        dataList.Add( BookmarkCreator.Csvs.Data.Create( text1 ) );
+        string text2 = "How2Speak,http://how2speak.hahaha/,This is test.LOL,#English";
+        dataList.Add( BookmarkCreator.Csvs.Data.Create( text2 ) );
+
+        Assert.Equal( "        <li><a href=\"#Bookmark2\">Bookmark2</a></li>", dataList.ToListHtmlString() );
+
+        string exected = "";
+        exected += "    <h2 id=\"Bookmark2\">Bookmark2</h2>\n";
+        exected += "    <div class=\"table_area\">\n";
+        exected += "        <table class=\"web_list_table\">\n";
+        exected += "            <tr>\n";
+        exected += "                <th class=\"id\">ID</th>\n";
+        exected += "                <th class=\"title\">タイトル</th>\n";
+        exected += "                <th class=\"url\">URL</th>\n";
+        exected += "                <th class=\"summary\">概要</th>\n";
+        exected += "            </tr>\n";
+        exected += "\n";
+        exected += "            <tr>\n";
+        exected += "                <td class=\"id\">1</td>\n";
+        exected += "                <td class=\"title\"><a href=\"http://how2learn.hahaha/\">How2Learn</a></td>\n";
+        exected += "                <td class=\"url\">http://how2learn.hahaha/</td>\n";
+        exected += "                <td class=\"summary\">This is test.</td>\n";
+        exected += "            </tr>\n";
+        exected += "            <tr>\n";
+        exected += "                <td class=\"id\">2</td>\n";
+        exected += "                <td class=\"title\"><a href=\"http://how2speak.hahaha/\">How2Speak</a></td>\n";
+        exected += "                <td class=\"url\">http://how2speak.hahaha/</td>\n";
+        exected += "                <td class=\"summary\">This is test.LOL</td>\n";
+        exected += "            </tr>\n";
+        exected += "        </table>\n";
+        exected += "    </div>\n";
+
+        Assert.Equal( exected, dataList.ToTableHtmlString() );
+    }
 }
