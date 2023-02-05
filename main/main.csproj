@@ -15,6 +15,10 @@
       <Link>README.TXT</Link>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Condition="'$(Configuration)' != 'Debug'" Include="res\Readmes\README_EN.TXT">
+      <Link>README_EN.TXT</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
 
   <ItemGroup>
