@@ -6,7 +6,6 @@ This is the product which makes the HTML file as a bookmark.
 
 - dotnet 6.0.202
 - Windows OS
-- [NLog - NuGet Gallery](https://www.nuget.org/packages/NLog/)
 
 ## 2. Install
 
@@ -35,8 +34,6 @@ $ run.bat
 ## 4. Licenses
 
 This library is released under the MIT License.
-
-[NLog - NuGet Gallery](https://www.nuget.org/packages/NLog/) is under the BSD-3-Clause license.
 
 The image files in the directory "main/res/Frames" are downloaded from [GAHAG | 著作権フリー写真・イラスト素材集](https://gahag.net/), and under the [CC0](https://creativecommons.org/share-your-work/public-domain/cc0) License.
 
