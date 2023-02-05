@@ -11,6 +11,17 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Content Condition="'$(Configuration)' != 'Debug'" Include="res\Readmes\README.TXT">
+      <Link>README.TXT</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Condition="'$(Configuration)' != 'Debug'" Include="res\Readmes\README_EN.TXT">
+      <Link>README_EN.TXT</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
     <Content Remove="res\tmplts\template.html" />
     <EmbeddedResource Include="res\tmplts\template.html" LogicalName="template.html" />
   </ItemGroup>
