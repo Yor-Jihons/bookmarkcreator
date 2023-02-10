@@ -11,6 +11,10 @@ Reason:
 When I manages the URL which I refer to, it is bothers me.
 So I created this program, in order to manage them.
 
+What you can do:
+* To create the template HTML file with the option ``-g``.
+* To create the HTML as a bookmark.
+
 Install:
 Just unpack this zip-file.
 
