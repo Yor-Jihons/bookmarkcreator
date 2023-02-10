@@ -1,11 +1,11 @@
-# BookmarkCreator 1.0.0
+# BookmarkCreator
 
 This is the product which makes the HTML file as a bookmark.
 
 ## 1. Requirements
 
 - dotnet 6.0.202
-- Windows OS
+- Windows OS (later 7)
 
 ## 2. Install
 
