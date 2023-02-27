@@ -19,8 +19,8 @@ Install:
 Just unpack this zip-file.
 
 Usage:
-See also [The online help](https://yor-jihons.github.io/helppages/en/bookmarkcreator.html).
-URL: https://yor-jihons.github.io/helppages/en/bookmarkcreator.html
+See also [The online help](https://yor-jroom.com/help/en/bookmarkcreator.html).
+URL: https://yor-jroom.com/help/en/bookmarkcreator.html
 
 System requirements:
 Windows 7 later

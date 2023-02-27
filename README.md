@@ -31,6 +31,8 @@ Step 1. Run the bat file "run.bat".
 $ run.bat
 ```
 
+See also [the online help](https://yor-jroom.com/help/en/bookmarkcreator.html) ( or [for Japanese](https://yor-jroom.com/help/ja/bookmarkcreator.html) ).
+
 ## 4. Licenses
 
 This library is released under the MIT License.
@@ -44,9 +46,7 @@ The Icon file are downloaded from [icon-icons.com](https://icon-icons.com/ja/%E3
 - dotnet
 - Language: C#
 
-## 6. Changes
-
-## 7. Contact
+## 6. Contact
 
 Author: Yor-Jihons  
 GitHub: [BookmarkCreator](https://github.com/Yor-Jihons/bookmarkcreator)  
