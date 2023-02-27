@@ -46,9 +46,7 @@ The Icon file are downloaded from [icon-icons.com](https://icon-icons.com/ja/%E3
 - dotnet
 - Language: C#
 
-## 6. Changes
-
-## 7. Contact
+## 6. Contact
 
 Author: Yor-Jihons  
 GitHub: [BookmarkCreator](https://github.com/Yor-Jihons/bookmarkcreator)  
