@@ -31,6 +31,8 @@ Step 1. Run the bat file "run.bat".
 $ run.bat
 ```
 
+See also [the online help](https://yor-jroom.com/help/en/bookmarkcreator.html) ( or [for Japanese](https://yor-jroom.com/help/ja/bookmarkcreator.html) ).
+
 ## 4. Licenses
 
 This library is released under the MIT License.
