@@ -2,7 +2,7 @@ BookmarkCreator
 ----------------------------
 
 Version:
-BookmarkCreator 1.0.0
+BookmarkCreator 1.0.1
 
 Author:
 Yor-Jihons

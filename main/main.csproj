@@ -6,7 +6,7 @@
     <AssemblyName>BookmarkCreator</AssemblyName>
     <ApplicationIcon>.\res\Icons\appicon.ico</ApplicationIcon>
     <DebugType Condition="'$(Configuration)' != 'Debug'">none</DebugType>
-    <Version>1.0.0</Version>
+    <Version>1.0.1</Version>
     <Copyright>Yor-Jihons</Copyright>
   </PropertyGroup>
 
@@ -32,10 +32,5 @@
     <Content Remove="res\tmplts\template.html" />
     <EmbeddedResource Include="res\tmplts\template.html" LogicalName="template.html" />
   </ItemGroup>
-
-  <!-- Show message -->
-  <Target Name="PrintCompile" BeforeTargets="Build">
-    <Message Text="----- Compile $(AssemblyName) as CLI, $(Configuration) -----" Importance="high" />
-  </Target>
 
 </Project>
