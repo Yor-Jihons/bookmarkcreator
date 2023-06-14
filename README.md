@@ -37,8 +37,6 @@ See also [the online help](https://yor-jroom.com/help/en/bookmarkcreator.html) (
 
 This library is released under the MIT License.
 
-The image files in the directory "main/res/Frames" are downloaded from [GAHAG | 著作権フリー写真・イラスト素材集](https://gahag.net/), and under the [CC0](https://creativecommons.org/share-your-work/public-domain/cc0) License.
-
 The Icon file are downloaded from [icon-icons.com](https://icon-icons.com/ja/%E3%82%A2%E3%82%A4%E3%82%B3%E3%83%B3/%E3%82%A2%E3%83%97%E3%83%AA/129133), and under the CC Atribution.
 
 ## 5. Development Environment
