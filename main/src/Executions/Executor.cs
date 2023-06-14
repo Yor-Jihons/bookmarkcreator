@@ -69,13 +69,15 @@ namespace BookmarkCreator.Executions
         /// Create the html string with template file.
         /// </summary>
         /// <param name="templateFilePath">The file path as a template html.</param>
+        /// <param name="titleString">The string as a title for the result html.</param>
         /// <param name="contentString">The string made from the dictionary for the data.</param>
         /// <returns>The result html string.</returns>
-        public static string CreateHtmlString( string templateFilePath, string contentString )
+        public static string CreateHtmlString( string templateFilePath, string titleString, string contentString )
         {
             var template = (new Factories.TemplateFileScanner( templateFilePath )).Scan();
             var resultBuilder = new StringBuilder( template );
-            resultBuilder.Append( contentString );
+            resultBuilder = resultBuilder.Replace( "[TITLE]", titleString );
+            resultBuilder = resultBuilder.Replace( "[HERE]", contentString );
         return resultBuilder.ToString();
         }
     }
