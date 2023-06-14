@@ -20,7 +20,6 @@ namespace BookmarkCreator
 
                 // Make the result html string.
                 string htmlString = Executions.Executor.CreateHtmlString( cmdline.TemplateFilePath, cmdline.Title, contentString );
-                Console.WriteLine(" " + htmlString);
 
                 // Write the file.
                 (new Factories.FilePrinter( cmdline.OutputFilePath )).Print( htmlString );
