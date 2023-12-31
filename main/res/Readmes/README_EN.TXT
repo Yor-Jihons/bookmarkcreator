@@ -2,7 +2,7 @@ BookmarkCreator
 ----------------------------
 
 Version:
-  BookmarkCreator 1.0.2
+  BookmarkCreator 1.0.3
 
 Author:
   Yor-Jihons
@@ -20,7 +20,7 @@ Install:
 
 Usage:
   See also [The online help](https://yor-jroom.com/help/en/bookmarkcreator.html).
-  URL: https://yor-jroom.com/help/en/bookmarkcreator.html
+  URL: https://yorroom2.cloudfree.jp/mainroom/en/bookmarkcreator.html
 
 License:
   * MIT license (This application)

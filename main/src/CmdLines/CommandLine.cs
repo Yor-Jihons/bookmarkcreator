@@ -120,7 +120,7 @@ namespace BookmarkCreator.CmdLines
             builder.Append( "--help:\n" );
             builder.Append( "    Show this help.\n" );
             builder.Append( "    (Shortened: -h)\n" );
-            builder.Append( "More information, see also https://yor-jroom.com/help/en/bookmarkcreator.html or https://yor-jroom.com/help/ja/bookmarkcreator.html ." );
+            builder.Append( "More information, see also  https://yorroom2.cloudfree.jp/mainroom/en/bookmarkcreator.html or https://yorroom2.cloudfree.jp/help/ja/bookmarkcreator.html ." );
         return builder.ToString();
         }
 

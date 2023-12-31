@@ -2,7 +2,7 @@ BookmarkCreator
 ----------------------------
 
 バージョン:
-  BookmarkCreator 1.0.2
+  BookmarkCreator 1.0.3
 
 著作者:
   Yor-Jihons
@@ -19,7 +19,7 @@ BookmarkCreator
 
 使い方:
   [オンラインヘルプ](https://yor-jroom.com/help/ja/bookmarkcreator.html)を参照してください。
-  URL: https://yor-jroom.com/help/ja/bookmarkcreator.html
+  URL: https://yorroom2.cloudfree.jp/help/ja/bookmarkcreator.html
 
 ライセンス:
   * 本体: MITライセンス
