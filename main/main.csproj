@@ -4,9 +4,9 @@
     <OutputType>Exe</OutputType>
     <TargetFramework>net6.0</TargetFramework>
     <AssemblyName>BookmarkCreator</AssemblyName>
-    <ApplicationIcon>.\res\Icons\appicon.ico</ApplicationIcon>
+    <ApplicationIcon>.\res\Icons\appicon2.ico</ApplicationIcon>
     <DebugType Condition="'$(Configuration)' != 'Debug'">none</DebugType>
-    <Version>1.0.3</Version>
+    <Version>1.0.4</Version>
     <Copyright>Yor-Jihons</Copyright>
   </PropertyGroup>
 

@@ -2,7 +2,7 @@ BookmarkCreator
 ----------------------------
 
 バージョン:
-  BookmarkCreator 1.0.3
+  BookmarkCreator 1.0.4
 
 著作者:
   Yor-Jihons
@@ -23,7 +23,6 @@ BookmarkCreator
 
 ライセンス:
   * 本体: MITライセンス
-  * ICON: CC Atribution from [icon-icons.com](https://icon-icons.com/ja/%E3%82%A2%E3%82%A4%E3%82%B3%E3%83%B3/%E3%82%A2%E3%83%97%E3%83%AA/129133)
 
 動作環境:
   Windows 7 以降
