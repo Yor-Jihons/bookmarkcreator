@@ -30,6 +30,15 @@ namespace BookmarkCreator.CmdLines
                     Console.WriteLine( CommandLine.CreateHelpString() );
                     return null;
                 }
+                else if( arg.Equals( "--version", sc ) || arg.Equals( "-v", sc ) )
+                {
+                    Console.WriteLine(
+                        System.Diagnostics.FileVersionInfo.GetVersionInfo(
+                            System.Reflection.Assembly.GetExecutingAssembly().Location
+                        ).FileVersion
+                    );
+                    return null;
+                }
 
                 if( arg.Equals( "-g", sc ) )
                 {
@@ -100,6 +109,7 @@ namespace BookmarkCreator.CmdLines
             builder.Append( "[CMD]\n" );
             builder.Append( "$ BookmarkCreator -g\n" );
             builder.Append( "$ BookmarkCreator --definition=<FILEPATH> [--output=<FILEPATH>] [--title=<STR>] [--template=<FILEPATH>]\n" );
+            builder.Append( "$ BookmarkCreator --version\n" );
             builder.Append( "$ BookmarkCreator --help\n" );
             builder.Append( "\n" );
             builder.Append( "[ARGUMENTS]\n" );
@@ -117,6 +127,9 @@ namespace BookmarkCreator.CmdLines
             builder.Append( "--template=<FILEPATH>:\n" );
             builder.Append( "    Pass the file path as a template file. If you ommit this option, this program will run with a default template.\n" );
             builder.Append( "    (Shortened: -tmp=<FILEPATH> or -tmplt=<FILEPATH>)\n" );
+            builder.Append( "--version:\n" );
+            builder.Append( "    Show this version.\n" );
+            builder.Append( "    (Shortened: -v)\n" );
             builder.Append( "--help:\n" );
             builder.Append( "    Show this help.\n" );
             builder.Append( "    (Shortened: -h)\n" );
