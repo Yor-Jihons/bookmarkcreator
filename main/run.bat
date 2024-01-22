@@ -25,8 +25,9 @@ rem ------------------------- 関数定義 -------------------------
 
 :RunDebug
     rem %CSDEBUGEXE% --help
-    %CSDEBUGEXE% --definition=".\test\definition.data" --output=".\test\result.html"
+    rem %CSDEBUGEXE% --definition=".\test\definition.data" --output=".\test\result.html"
     rem %CSDEBUGEXE% -g
+    %CSDEBUGEXE% -v
 exit /b 0
 
 :RunRelease
