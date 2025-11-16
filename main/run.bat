@@ -1,8 +1,8 @@
 @echo off
 
 set PRODUCT=BookmarkCreator
-set CSDEBUGEXE=.\bin\Debug\net6.0\%PRODUCT%.exe
-set CSRELEASEEXE=.\bin\Release\net6.0\%PRODUCT%.exe
+set CSDEBUGEXE=.\bin\Debug\net8.0\%PRODUCT%.exe
+set CSRELEASEEXE=.\bin\Release\net8.0\%PRODUCT%.exe
 set CSPUBLISHEXE=.\bin\Publish\%PRODUCT%.exe
 
 if "%1" == "debug" (

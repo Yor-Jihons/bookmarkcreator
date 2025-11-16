@@ -2,11 +2,11 @@
 
   <PropertyGroup>
     <OutputType>Exe</OutputType>
-    <TargetFramework>net6.0</TargetFramework>
+    <TargetFramework>net8.0</TargetFramework>
     <AssemblyName>BookmarkCreator</AssemblyName>
     <ApplicationIcon>.\res\Icons\appicon2.ico</ApplicationIcon>
     <DebugType Condition="'$(Configuration)' != 'Debug'">none</DebugType>
-    <Version>1.0.5</Version>
+    <Version>1.1.0</Version>
     <Copyright>Yor-Jihons</Copyright>
   </PropertyGroup>
 
